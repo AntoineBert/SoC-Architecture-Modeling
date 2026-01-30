@@ -1,4 +1,5 @@
 SoC & NoC Architecture Simulator
+
 📌 Project Overview
 This project provides a high-level modeling and simulation environment for Systems-on-Chip (SoC) and Networks-on-Chip (NoC). Developed in Python, it allows users to architect custom grid-based networks of processing nodes and memory units, and simulate complex data exchange workloads using real-time routing algorithms.
 
