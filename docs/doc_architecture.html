@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module architecture</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>architecture</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cbertr%5Conedrive%5Cdocuments%5Censta-bretagne%5C%C3%A9tude%20bibliographique%5Cprojet_info%5Csoc_v2%5Carchitecture.py">c:\users\bertr\onedrive\documents\ensta-bretagne\étude bibliographique\projet_info\soc_v2\architecture.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="networkx.html">networkx</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="architecture.html#NoC">NoC</a>
+</font></dt><dt><font face="helvetica, arial"><a href="architecture.html#Node">Node</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="architecture.html#CalculNode">CalculNode</a>
+</font></dt><dt><font face="helvetica, arial"><a href="architecture.html#MemoryNode">MemoryNode</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="architecture.html#SoC">SoC</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CalculNode">class <strong>CalculNode</strong></a>(<a href="architecture.html#Node">Node</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#CalculNode">CalculNode</a>(id,&nbsp;cache_size,&nbsp;computation_time)<br>
+&nbsp;<br>
+Classe&nbsp;décrivant&nbsp;la&nbsp;structure&nbsp;des&nbsp;nœuds&nbsp;de&nbsp;calcul<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="architecture.html#CalculNode">CalculNode</a></dd>
+<dd><a href="architecture.html#Node">Node</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CalculNode-__init__"><strong>__init__</strong></a>(self, id, cache_size, computation_time)</dt><dd><tt>Crée&nbsp;un&nbsp;nœud&nbsp;de&nbsp;calcul.<br>
+&nbsp;<br>
+:param&nbsp;id:&nbsp;Identifiant&nbsp;du&nbsp;nœud<br>
+:param&nbsp;cache_size:&nbsp;taille&nbsp;du&nbsp;cache<br>
+:param&nbsp;computation_time:&nbsp;temps&nbsp;de&nbsp;calcul</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>cache</strong></dt>
+<dd><tt>Accès&nbsp;au&nbsp;cache&nbsp;du&nbsp;nœud&nbsp;de&nbsp;calcul.<br>
+&nbsp;<br>
+:return:&nbsp;le&nbsp;cache&nbsp;du&nbsp;nœud&nbsp;de&nbsp;calcul</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="architecture.html#Node">Node</a>:<br>
+<dl><dt><a name="CalculNode-add_connection"><strong>add_connection</strong></a>(self, other, latency)</dt><dd><tt>Ajoute&nbsp;une&nbsp;connexion&nbsp;avec&nbsp;un&nbsp;autre&nbsp;nœud&nbsp;en&nbsp;précisant&nbsp;la&nbsp;latence&nbsp;(vitesse&nbsp;à&nbsp;laquelle&nbsp;circule&nbsp;les&nbsp;informations&nbsp;entre&nbsp;ceux-ci).<br>
+&nbsp;<br>
+:param&nbsp;other:&nbsp;Noeud&nbsp;connecté<br>
+:param&nbsp;latency:&nbsp;temps&nbsp;de&nbsp;transmission&nbsp;de&nbsp;l'information<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="CalculNode-add_data"><strong>add_data</strong></a>(self, data)</dt><dd><tt>Ajoute&nbsp;des&nbsp;données&nbsp;à&nbsp;un&nbsp;nœud.<br>
+&nbsp;<br>
+:param&nbsp;data:&nbsp;Données&nbsp;à&nbsp;ajouter&nbsp;au&nbsp;nœud<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="CalculNode-get_latency"><strong>get_latency</strong></a>(self, other)</dt><dd><tt>Renvoie&nbsp;la&nbsp;latence&nbsp;de&nbsp;connexion&nbsp;entre&nbsp;deux&nbsp;nœuds&nbsp;ou&nbsp;une&nbsp;erreur&nbsp;s'ils&nbsp;ne&nbsp;sont&nbsp;pas&nbsp;connectés.<br>
+&nbsp;<br>
+:param&nbsp;other:&nbsp;Noeud&nbsp;connecté<br>
+:return:&nbsp;Latence&nbsp;de&nbsp;la&nbsp;connexion&nbsp;entre&nbsp;les&nbsp;deux&nbsp;nœuds</tt></dd></dl>
+
+<dl><dt><a name="CalculNode-remaining_space"><strong>remaining_space</strong></a>(self)</dt><dd><tt>Permet&nbsp;d'obtenir&nbsp;l'espace&nbsp;libre&nbsp;dans&nbsp;la&nbsp;mémoire&nbsp;d'un&nbsp;nœud.<br>
+&nbsp;<br>
+:return:&nbsp;Espace&nbsp;disponible&nbsp;dans&nbsp;la&nbsp;mémoire&nbsp;du&nbsp;nœud</tt></dd></dl>
+
+<dl><dt><a name="CalculNode-use"><strong>use</strong></a>(self)</dt><dd><tt>Cette&nbsp;méthode&nbsp;permet&nbsp;d'obtenir&nbsp;le&nbsp;taux&nbsp;d'utilisation&nbsp;de&nbsp;la&nbsp;mémoire&nbsp;d'un&nbsp;nœud&nbsp;(en&nbsp;pourcentage).<br>
+&nbsp;<br>
+:return:&nbsp;Le&nbsp;taux&nbsp;d'utilisation&nbsp;du&nbsp;nœud&nbsp;(en&nbsp;pourcentage).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="architecture.html#Node">Node</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MemoryNode">class <strong>MemoryNode</strong></a>(<a href="architecture.html#Node">Node</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#MemoryNode">MemoryNode</a>(id,&nbsp;capacity)<br>
+&nbsp;<br>
+Classe&nbsp;décrivant&nbsp;la&nbsp;structure&nbsp;des&nbsp;nœuds&nbsp;de&nbsp;mémoire<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="architecture.html#MemoryNode">MemoryNode</a></dd>
+<dd><a href="architecture.html#Node">Node</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="MemoryNode-__init__"><strong>__init__</strong></a>(self, id, capacity)</dt><dd><tt>Crée&nbsp;un&nbsp;nœud&nbsp;de&nbsp;mémoire.<br>
+&nbsp;<br>
+:param&nbsp;id:&nbsp;Identifiant&nbsp;du&nbsp;nœud<br>
+:param&nbsp;capacity:&nbsp;taille&nbsp;de&nbsp;la&nbsp;mémoire</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>memory</strong></dt>
+<dd><tt>Accès&nbsp;à&nbsp;la&nbsp;mémoire&nbsp;du&nbsp;nœud.<br>
+&nbsp;<br>
+:&nbsp;return:&nbsp;Mémoire&nbsp;contenue&nbsp;dans&nbsp;le&nbsp;nœud&nbsp;de&nbsp;mémoire</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="architecture.html#Node">Node</a>:<br>
+<dl><dt><a name="MemoryNode-add_connection"><strong>add_connection</strong></a>(self, other, latency)</dt><dd><tt>Ajoute&nbsp;une&nbsp;connexion&nbsp;avec&nbsp;un&nbsp;autre&nbsp;nœud&nbsp;en&nbsp;précisant&nbsp;la&nbsp;latence&nbsp;(vitesse&nbsp;à&nbsp;laquelle&nbsp;circule&nbsp;les&nbsp;informations&nbsp;entre&nbsp;ceux-ci).<br>
+&nbsp;<br>
+:param&nbsp;other:&nbsp;Noeud&nbsp;connecté<br>
+:param&nbsp;latency:&nbsp;temps&nbsp;de&nbsp;transmission&nbsp;de&nbsp;l'information<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="MemoryNode-add_data"><strong>add_data</strong></a>(self, data)</dt><dd><tt>Ajoute&nbsp;des&nbsp;données&nbsp;à&nbsp;un&nbsp;nœud.<br>
+&nbsp;<br>
+:param&nbsp;data:&nbsp;Données&nbsp;à&nbsp;ajouter&nbsp;au&nbsp;nœud<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="MemoryNode-get_latency"><strong>get_latency</strong></a>(self, other)</dt><dd><tt>Renvoie&nbsp;la&nbsp;latence&nbsp;de&nbsp;connexion&nbsp;entre&nbsp;deux&nbsp;nœuds&nbsp;ou&nbsp;une&nbsp;erreur&nbsp;s'ils&nbsp;ne&nbsp;sont&nbsp;pas&nbsp;connectés.<br>
+&nbsp;<br>
+:param&nbsp;other:&nbsp;Noeud&nbsp;connecté<br>
+:return:&nbsp;Latence&nbsp;de&nbsp;la&nbsp;connexion&nbsp;entre&nbsp;les&nbsp;deux&nbsp;nœuds</tt></dd></dl>
+
+<dl><dt><a name="MemoryNode-remaining_space"><strong>remaining_space</strong></a>(self)</dt><dd><tt>Permet&nbsp;d'obtenir&nbsp;l'espace&nbsp;libre&nbsp;dans&nbsp;la&nbsp;mémoire&nbsp;d'un&nbsp;nœud.<br>
+&nbsp;<br>
+:return:&nbsp;Espace&nbsp;disponible&nbsp;dans&nbsp;la&nbsp;mémoire&nbsp;du&nbsp;nœud</tt></dd></dl>
+
+<dl><dt><a name="MemoryNode-use"><strong>use</strong></a>(self)</dt><dd><tt>Cette&nbsp;méthode&nbsp;permet&nbsp;d'obtenir&nbsp;le&nbsp;taux&nbsp;d'utilisation&nbsp;de&nbsp;la&nbsp;mémoire&nbsp;d'un&nbsp;nœud&nbsp;(en&nbsp;pourcentage).<br>
+&nbsp;<br>
+:return:&nbsp;Le&nbsp;taux&nbsp;d'utilisation&nbsp;du&nbsp;nœud&nbsp;(en&nbsp;pourcentage).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="architecture.html#Node">Node</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NoC">class <strong>NoC</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>La&nbsp;classe&nbsp;<a href="#NoC">NoC</a>&nbsp;(Network&nbsp;on&nbsp;Chip)&nbsp;est&nbsp;un&nbsp;dictionnaire&nbsp;de&nbsp;nœuds&nbsp;de&nbsp;mémoire&nbsp;et&nbsp;un&nbsp;dictionnaire&nbsp;de&nbsp;nœuds&nbsp;de&nbsp;calcul.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="NoC-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Crée&nbsp;un&nbsp;objet&nbsp;de&nbsp;type&nbsp;<a href="#NoC">NoC</a>&nbsp;contenant&nbsp;un&nbsp;dictionnaire&nbsp;vide&nbsp;de&nbsp;nœuds&nbsp;de&nbsp;mémoire&nbsp;et&nbsp;un&nbsp;dictionnaire&nbsp;vide&nbsp;de&nbsp;nœuds<br>
+de&nbsp;calcul.</tt></dd></dl>
+
+<dl><dt><a name="NoC-add_connection"><strong>add_connection</strong></a>(self, node_id1, node_id2, latency)</dt><dd><tt>Ajoute&nbsp;une&nbsp;connexion&nbsp;entre&nbsp;deux&nbsp;nœuds.<br>
+&nbsp;<br>
+:param&nbsp;node_id1:&nbsp;identifiant&nbsp;du&nbsp;premier&nbsp;nœud<br>
+:param&nbsp;node_id2:&nbsp;identifiant&nbsp;du&nbsp;deuxième&nbsp;nœud<br>
+:param&nbsp;latency:&nbsp;latence&nbsp;de&nbsp;la&nbsp;connexion&nbsp;(vitesse&nbsp;de&nbsp;transmission&nbsp;des&nbsp;données&nbsp;entre&nbsp;les&nbsp;nœuds)<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="NoC-add_node"><strong>add_node</strong></a>(self, node)</dt><dd><tt>Ajoute&nbsp;un&nbsp;nœud&nbsp;au&nbsp;<a href="#SoC">SoC</a>.<br>
+&nbsp;<br>
+:&nbsp;param&nbsp;node:&nbsp;nœud&nbsp;à&nbsp;ajouter&nbsp;au&nbsp;<a href="#SoC">SoC</a><br>
+:&nbsp;return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="NoC-are_nodes_connected"><strong>are_nodes_connected</strong></a>(self, node_id1, node_id2)</dt><dd><tt>Vérifie&nbsp;si&nbsp;deux&nbsp;nœuds&nbsp;sont&nbsp;connectés&nbsp;directement.<br>
+&nbsp;<br>
+:param&nbsp;node_id1:&nbsp;identifiant&nbsp;du&nbsp;nœud&nbsp;1<br>
+:param&nbsp;node_id2:&nbsp;identifiant&nbsp;du&nbsp;nœud&nbsp;2<br>
+:return:&nbsp;True&nbsp;s'ils&nbsp;sont&nbsp;connectés,&nbsp;False&nbsp;sinon</tt></dd></dl>
+
+<dl><dt><a name="NoC-clean"><strong>clean</strong></a>(self)</dt><dd><tt>Supprime&nbsp;toutes&nbsp;les&nbsp;données&nbsp;stockées&nbsp;dans&nbsp;les&nbsp;mémoires&nbsp;des&nbsp;nœuds&nbsp;du&nbsp;<a href="#NoC">NoC</a>.<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="NoC-clear"><strong>clear</strong></a>(self)</dt><dd><tt>Supprime&nbsp;tous&nbsp;les&nbsp;nœuds&nbsp;et&nbsp;les&nbsp;connexions&nbsp;du&nbsp;<a href="#NoC">NoC</a>.<br>
+&nbsp;<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="NoC-get_node"><strong>get_node</strong></a>(self, node_id)</dt><dd><tt>Renvoie&nbsp;le&nbsp;nœud&nbsp;correspondant&nbsp;à&nbsp;l'identifiant&nbsp;donné.<br>
+&nbsp;<br>
+:param&nbsp;node_id:&nbsp;Identifiant&nbsp;du&nbsp;nœud&nbsp;recherché<br>
+:return:&nbsp;Nœud&nbsp;correspondant&nbsp;à&nbsp;l'identifiant&nbsp;donné&nbsp;en&nbsp;argument</tt></dd></dl>
+
+<dl><dt><a name="NoC-new_random"><strong>new_random</strong></a>(self, nb_cac=5, nb_mem=5, rnd=10, **kwargs)</dt></dl>
+
+<dl><dt><a name="NoC-random"><strong>random</strong></a>(self, size=30, prop=0.5, minMemorySize=100, maxMemorySize=1000, minCacheSize=100, maxCacheSize=100, minComputationTime=5, maxComputationTime=10)</dt><dd><tt>Permet&nbsp;de&nbsp;générer&nbsp;des&nbsp;nœuds&nbsp;de&nbsp;façon&nbsp;aléatoires&nbsp;au&nbsp;sein&nbsp;du&nbsp;<a href="#NoC">NoC</a>.<br>
+:param&nbsp;size:&nbsp;Nombre&nbsp;de&nbsp;nœuds&nbsp;souhaité<br>
+:param&nbsp;prop:&nbsp;Proportion&nbsp;de&nbsp;nœuds&nbsp;de&nbsp;mémoire&nbsp;souhaitée<br>
+:return:</tt></dd></dl>
+
+<dl><dt><a name="NoC-remove_connection"><strong>remove_connection</strong></a>(self, node_id_1, node_id_2)</dt><dd><tt>Supprime&nbsp;la&nbsp;connexion&nbsp;entre&nbsp;deux&nbsp;nœuds&nbsp;dans&nbsp;le&nbsp;<a href="#NoC">NoC</a>.<br>
+&nbsp;<br>
+:param&nbsp;node_id_1:&nbsp;identifiant&nbsp;du&nbsp;premier&nbsp;nœud<br>
+:param&nbsp;node_id_2:&nbsp;identifiant&nbsp;du&nbsp;deuxième&nbsp;nœud<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="NoC-remove_node"><strong>remove_node</strong></a>(self, node_id)</dt><dd><tt>Supprime&nbsp;un&nbsp;nœud&nbsp;du&nbsp;<a href="#NoC">NoC</a>.<br>
+&nbsp;<br>
+:param&nbsp;node_id:&nbsp;identifiant&nbsp;du&nbsp;nœud&nbsp;à&nbsp;supprimer<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="NoC-shortest_path"><strong>shortest_path</strong></a>(self, start_node_id, end_node_id, visited=None, current_path=None, current_weight=0)</dt><dd><tt>Trouve&nbsp;le&nbsp;chemin&nbsp;le&nbsp;plus&nbsp;court&nbsp;en&nbsp;se&nbsp;basant&nbsp;sur&nbsp;l'algorithme&nbsp;de&nbsp;Dijkstra.<br>
+Renvoie&nbsp;le&nbsp;chemin&nbsp;le&nbsp;plus&nbsp;court&nbsp;s'il&nbsp;existe&nbsp;et&nbsp;son&nbsp;poids&nbsp;total&nbsp;(en&nbsp;terme&nbsp;de&nbsp;latence&nbsp;et&nbsp;de&nbsp;temps&nbsp;de&nbsp;calcul).<br>
+&nbsp;<br>
+:param&nbsp;start_node_id:&nbsp;nœud&nbsp;de&nbsp;départ<br>
+:param&nbsp;end_node_id:&nbsp;nœud&nbsp;de&nbsp;destination<br>
+:param&nbsp;visited:&nbsp;liste&nbsp;des&nbsp;nœuds&nbsp;visités&nbsp;(utile&nbsp;pour&nbsp;la&nbsp;récursivité)<br>
+:param&nbsp;current_path:&nbsp;chemin&nbsp;actuel&nbsp;(utile&nbsp;pour&nbsp;la&nbsp;récursivité)<br>
+:param&nbsp;current_weight:&nbsp;poids&nbsp;total&nbsp;du&nbsp;chemin&nbsp;actuel&nbsp;(utile&nbsp;pour&nbsp;la&nbsp;récursivité)<br>
+:return:&nbsp;(shortest,&nbsp;min_weight)</tt></dd></dl>
+
+<dl><dt><a name="NoC-to_networkx_graph"><strong>to_networkx_graph</strong></a>(self)</dt><dd><tt>Transforme&nbsp;le&nbsp;<a href="#NoC">NoC</a>&nbsp;en&nbsp;un&nbsp;graphe&nbsp;NetworkX.<br>
+&nbsp;<br>
+:return:&nbsp;Graphe&nbsp;NetworkX&nbsp;représentant&nbsp;le&nbsp;<a href="#NoC">NoC</a></tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Node">class <strong>Node</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Node">Node</a>(id,&nbsp;type)<br>
+&nbsp;<br>
+Classe&nbsp;décrivant&nbsp;les&nbsp;relations&nbsp;entre&nbsp;les&nbsp;nœuds<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Node-__init__"><strong>__init__</strong></a>(self, id, type)</dt><dd><tt>Crée&nbsp;un&nbsp;nœud&nbsp;avec&nbsp;un&nbsp;dictionnaire&nbsp;vide&nbsp;contenant&nbsp;les&nbsp;nœuds&nbsp;ayant&nbsp;une&nbsp;connexion&nbsp;avec&nbsp;lui-même.<br>
+&nbsp;<br>
+:param&nbsp;id:&nbsp;Identifiant&nbsp;du&nbsp;nœud</tt></dd></dl>
+
+<dl><dt><a name="Node-add_connection"><strong>add_connection</strong></a>(self, other, latency)</dt><dd><tt>Ajoute&nbsp;une&nbsp;connexion&nbsp;avec&nbsp;un&nbsp;autre&nbsp;nœud&nbsp;en&nbsp;précisant&nbsp;la&nbsp;latence&nbsp;(vitesse&nbsp;à&nbsp;laquelle&nbsp;circule&nbsp;les&nbsp;informations&nbsp;entre&nbsp;ceux-ci).<br>
+&nbsp;<br>
+:param&nbsp;other:&nbsp;Noeud&nbsp;connecté<br>
+:param&nbsp;latency:&nbsp;temps&nbsp;de&nbsp;transmission&nbsp;de&nbsp;l'information<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Node-add_data"><strong>add_data</strong></a>(self, data)</dt><dd><tt>Ajoute&nbsp;des&nbsp;données&nbsp;à&nbsp;un&nbsp;nœud.<br>
+&nbsp;<br>
+:param&nbsp;data:&nbsp;Données&nbsp;à&nbsp;ajouter&nbsp;au&nbsp;nœud<br>
+:return:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Node-get_latency"><strong>get_latency</strong></a>(self, other)</dt><dd><tt>Renvoie&nbsp;la&nbsp;latence&nbsp;de&nbsp;connexion&nbsp;entre&nbsp;deux&nbsp;nœuds&nbsp;ou&nbsp;une&nbsp;erreur&nbsp;s'ils&nbsp;ne&nbsp;sont&nbsp;pas&nbsp;connectés.<br>
+&nbsp;<br>
+:param&nbsp;other:&nbsp;Noeud&nbsp;connecté<br>
+:return:&nbsp;Latence&nbsp;de&nbsp;la&nbsp;connexion&nbsp;entre&nbsp;les&nbsp;deux&nbsp;nœuds</tt></dd></dl>
+
+<dl><dt><a name="Node-remaining_space"><strong>remaining_space</strong></a>(self)</dt><dd><tt>Permet&nbsp;d'obtenir&nbsp;l'espace&nbsp;libre&nbsp;dans&nbsp;la&nbsp;mémoire&nbsp;d'un&nbsp;nœud.<br>
+&nbsp;<br>
+:return:&nbsp;Espace&nbsp;disponible&nbsp;dans&nbsp;la&nbsp;mémoire&nbsp;du&nbsp;nœud</tt></dd></dl>
+
+<dl><dt><a name="Node-use"><strong>use</strong></a>(self)</dt><dd><tt>Cette&nbsp;méthode&nbsp;permet&nbsp;d'obtenir&nbsp;le&nbsp;taux&nbsp;d'utilisation&nbsp;de&nbsp;la&nbsp;mémoire&nbsp;d'un&nbsp;nœud&nbsp;(en&nbsp;pourcentage).<br>
+&nbsp;<br>
+:return:&nbsp;Le&nbsp;taux&nbsp;d'utilisation&nbsp;du&nbsp;nœud&nbsp;(en&nbsp;pourcentage).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SoC">class <strong>SoC</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>La&nbsp;classe&nbsp;<a href="#SoC">SoC</a>&nbsp;(System&nbsp;on&nbsp;Chip)&nbsp;est&nbsp;un&nbsp;dictionnaire&nbsp;de&nbsp;<a href="#NoC">NoC</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="SoC-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Crée&nbsp;un&nbsp;objet&nbsp;de&nbsp;type&nbsp;<a href="#SoC">SoC</a>&nbsp;contenant&nbsp;un&nbsp;dictionnaire&nbsp;vide&nbsp;dans&nbsp;lequel&nbsp;seront&nbsp;stockés&nbsp;les&nbsp;<a href="#NoC">NoC</a>.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
