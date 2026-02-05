@@ -18,9 +18,9 @@ This project provides a high-level modeling and simulation environment for **Sys
 
 ### Launching the Interface
 To start the graphical user interface, run the following command:
-
+```bash
 python interface.py
-
+```
 ### Loading Sample Data
 The repository includes pre-configured test files to help you get started quickly:
 1. **Open NoC**: Go to `File` > `Open NoC` and select `test_noc.pkl`.
