@@ -19,7 +19,6 @@ This project provides a high-level modeling and simulation environment for **Sys
 ### Launching the Interface
 To start the graphical user interface, run the following command:
 
->>>bash
 python interface.py
 
 ### Loading Sample Data
