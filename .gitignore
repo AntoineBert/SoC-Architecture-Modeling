@@ -1,0 +1,22 @@
+# Python virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python bytecode (compiled files)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code settings
+.vscode/
+
+# Distribution / Packaging
+dist/
+build/
+*.egg-info/
+
+# Data and Logs
+*.log
+.DS_Store (for Mac users)
