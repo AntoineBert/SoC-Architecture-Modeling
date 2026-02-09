@@ -35,7 +35,7 @@ Upon completion, the simulator generates a `simulation_report.txt` file. This re
 
 ## 📁 Repository Structure
 * `src/`: Core logic (Classes: `SoC`, `NoC`, `Node`, `Request`).
-* `interface.py`: Graphical user interface (GUI) implementation.
+* `main.py`: Graphical user interface (GUI) implementation.
 * `data/`: Sample `.pkl` configuration files.
 
 ## 👥 Authors
